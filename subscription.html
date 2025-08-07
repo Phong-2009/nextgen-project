@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subscription | CodeFutur</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
+      color: #fffffe;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .subscription-container {
+      max-width: 420px;
+      margin: 60px auto;
+      background: #232347;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px 0 rgba(127, 90, 240, 0.13);
+      padding: 36px 28px;
+      border: 1.5px solid #2cb67d;
+    }
+    .subscription-title {
+      color: #7f5af0;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+    .subscription-desc {
+      color: #b8b8ff;
+      text-align: center;
+      margin-bottom: 28px;
+      font-size: 1.08rem;
+    }
+    .form-label {
+      color: #b8b8ff;
+      font-size: 0.97rem;
+    }
+    .form-control {
+      background: #1a1a40;
+      color: #fffffe;
+      border: 1.5px solid #2cb67d;
+      border-radius: 7px;
+    }
+    .form-control:focus {
+      border-color: #7f5af0;
+      box-shadow: 0 0 0 0.15rem rgba(127,90,240,.15);
+      background: #232347;
+      color: #fff;
+    }
+    .btn-primary {
+      background: #7f5af0;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .btn-primary:hover {
+      background: #2cb67d;
+      color: #232347;
+    }
+    .payment-methods {
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .payment-methods label {
+      margin: 0 12px;
+      font-weight: 500;
+      color: #2cb67d;
+      cursor: pointer;
+    }
+    .success-message {
+      color: #2cb67d;
+      text-align: center;
+      margin-top: 18px;
+      font-weight: 700;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="subscription-container">
+    <div class="mb-4 text-center">
+  <span style="color:#2cb67d;font-weight:700;">Current Balance:</span>
+  <span id="current-balance" style="font-size:1.2rem;"></span>
+</div>
+
+<!-- Gói đăng ký -->
+<div class="mb-4">
+  <label class="form-label">Choose Subscription Plan:</label>
+  <div class="d-flex justify-content-between gap-2">
+    <div class="card bg-dark text-white p-2 flex-fill">
+      <input type="radio" name="plan" id="basic" value="basic" checked>
+      <label for="basic"><b>Basic</b> <br>₫0 / month</label>
+    </div>
+    <div class="card bg-dark text-white p-2 flex-fill">
+      <input type="radio" name="plan" id="pro" value="pro">
+      <label for="pro"><b>Pro</b> <br>₫99,000 / month</label>
+    </div>
+    <div class="card bg-dark text-white p-2 flex-fill">
+      <input type="radio" name="plan" id="premium" value="premium">
+      <label for="premium"><b>Premium</b> <br>₫199,000 / month</label>
+    </div>
+  </div>
+</div>
+
+<!-- Lịch sử giao dịch -->
+<div class="mt-5">
+  <h5 style="color:#7f5af0;">Transaction History</h5>
+  <table class="table table-dark table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Method</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>07/08/2025</td>
+        <td>₫100,000</td>
+        <td>MoMo</td>
+        <td style="color:#2cb67d;">Success</td>
+      </tr>
+      <!-- Thêm dòng mới khi tích hợp API -->
+    </tbody>
+  </table>
+</div>
+    <div class="subscription-title">Recharge & Payment</div>
+    <div class="subscription-desc">
+      Add funds to your CodeFutur account and unlock premium courses or features.
+    </div>
+    <form id="payment-form">
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount to Recharge (VND)</label>
+        <input type="number" class="form-control" id="amount" min="10000" step="1000" required placeholder="e.g. 100000" />
+      </div>
+      <div class="payment-methods mb-3">
+        <span class="form-label">Choose payment method:</span><br>
+        <input type="radio" name="method" id="momo" value="momo" required>
+        <label for="momo"><i class="fas fa-mobile-alt"></i> MoMo</label>
+        <input type="radio" name="method" id="bank" value="bank">
+        <label for="bank"><i class="fas fa-university"></i> Bank Transfer</label>
+        <input type="radio" name="method" id="card" value="card">
+        <label for="card"><i class="far fa-credit-card"></i> Credit Card</label>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" class="form-control" id="email" required placeholder="you@email.com" />
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="submit">
+        <i class="fas fa-wallet"></i> Pay & Recharge
+      </button>
+      <div class="success-message" id="success-message">
+        Payment successful! Your balance will be updated soon.
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <script>
+    document.getElementById('payment-form').onsubmit = function(e) {
+      e.preventDefault();
+      document.getElementById('success-message').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('success-message').style.display = 'none';
+        document.getElementById('payment-form').reset();
+      }, 2500);
+    };
+  </script>
+</body>
+</html>

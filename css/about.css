@@ -34,6 +34,13 @@ body {
   margin-bottom: 0;
   z-index: 2;
   font-weight: 500;
+  position: relative;
+  margin-top: 10px;
+  text-align: center;      /* Đảm bảo căn giữa nội dung */
+  margin-left: auto;       /* Căn giữa khối nếu cần */
+  margin-right: auto;
+  max-width: 700px;        /* Giới hạn chiều rộng nếu muốn đẹp hơn */
+  display: block;
 }
 .about-gallery {
   position: absolute;
@@ -114,6 +121,9 @@ body {
     padding: 40px 0 20px 0;
   }
 }
+
+
+
 .about-section {
   max-width: 700px;
   margin: 0 auto 40px auto;
@@ -124,7 +134,7 @@ body {
   border: 1.5px solid #2cb67d;
 }
 .about-main-content {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto 48px auto;
   background: #1a1a40;
   border-radius: 32px;
@@ -133,6 +143,9 @@ body {
   border: 1.5px solid #2cb67d;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Đảm bảo các phần tử con nằm giữa */
 }
 
 .about-main-content h2 {
@@ -153,12 +166,12 @@ body {
 }
 
 .about-features {
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   gap: 32px;
   justify-content: center;
   margin: 40px 0 0 0;
-  overflow-x: auto;
   padding-bottom: 16px;
 }
 
