@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course Analytics | CodeFutur</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/admin_analytics.css"/>
+</head>
+<body>
+  <div class="analytics-container">
+    <div class="analytics-title">Course Analytics & Statistics</div>
+    <div class="analytics-section-title">Select Course</div>
+    <select class="form-select course-select" id="course-select">
+      <option value="python">Python Fundamentals</option>
+      <option value="web">Web Basics</option>
+      <option value="ai">Intro to AI</option>
+      <!-- More courses can be loaded from API -->
+    </select>
+    <div class="analytics-section-title">Overview</div>
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="stat-value" id="enrollments">1,200</div>
+        <div class="stat-label">Enrollments</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-eye"></i></div>
+        <div class="stat-value" id="views">12,500</div>
+        <div class="stat-label">Total Views</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-thumbs-up"></i></div>
+        <div class="stat-value" id="likes">2,340</div>
+        <div class="stat-label">Total Likes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-coins"></i></div>
+        <div class="stat-value" id="revenue">₫1,200,000</div>
+        <div class="stat-label">Revenue</div>
+      </div>
+    </div>
+    <div class="analytics-section-title">Progress Chart</div>
+    <div class="chart-placeholder">
+      <!-- Placeholder for chart (can integrate chart.js or API later) -->
+      <span><i class="fas fa-chart-line"></i> Progress & Completion Rate Chart</span>
+    </div>
+    <div class="analytics-section-title">Recent Learner Activity</div>
+    <table class="table analytics-table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Action</th>
+          <th>Date</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nguyen Van A</td>
+          <td>Completed Lesson 5</td>
+          <td>07/08/2025</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td>Tran Thi B</td>
+          <td>Started Course</td>
+          <td>06/08/2025</td>
+          <td>5%</td>
+        </tr>
+        <tr>
+          <td>Le Van C</td>
+          <td>Completed Quiz</td>
+          <td>05/08/2025</td>
+          <td>30%</td>
+        </tr>
+        <!-- More activity rows can be loaded from API -->
+      </tbody>
+    </table>
+  </div>
+  <div class="admin-footer" style="text-align:center; margin-top:32px; color:#7f5af0;">
+    &copy; 2025 CodeFutur Analytics Panel
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <!-- Placeholder JS for switching course stats -->
+  <script>
+    // Demo data for switching courses
+    const stats = {
+      python: { enrollments: "1,200", views: "12,500", likes: "2,340", revenue: "₫1,200,000" },
+      web: { enrollments: "950", views: "8,900", likes: "1,540", revenue: "₫900,000" },
+      ai: { enrollments: "700", views: "6,200", likes: "1,000", revenue: "₫800,000" }
+    };
+    document.getElementById('course-select').addEventListener('change', function() {
+      const val = this.value;
+      document.getElementById('enrollments').textContent = stats[val].enrollments;
+      document.getElementById('views').textContent = stats[val].views;
+      document.getElementById('likes').textContent = stats[val].likes;
+      document.getElementById('revenue').textContent = stats[val].revenue;
+      // Bạn có thể cập nhật thêm chart và bảng activity bằng API ở đây
+    });
+  </script>
+  <script src="./scripts/firebase-config.js"></script>
+</body>
+</html>

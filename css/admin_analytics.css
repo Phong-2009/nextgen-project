@@ -1,0 +1,95 @@
+body {
+      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
+      color: #fffffe;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .analytics-container {
+      max-width: 1100px;
+      margin: 48px auto;
+      background: #232347;
+      border-radius: 24px;
+      box-shadow: 0 4px 32px 0 rgba(127, 90, 240, 0.13);
+      padding: 40px 32px;
+      border: 1.5px solid #2cb67d;
+    }
+    .analytics-title {
+      color: #7f5af0;
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-align: left;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+    }
+    .analytics-section-title {
+      color: #2cb67d;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      margin-top: 32px;
+    }
+    .course-select {
+      margin-bottom: 24px;
+      max-width: 350px;
+    }
+    .stats-bar {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      background: #1a1a40;
+      border-radius: 16px;
+      padding: 24px 32px;
+      min-width: 220px;
+      flex: 1;
+      text-align: center;
+      box-shadow: 0 2px 16px 0 rgba(127, 90, 240, 0.10);
+      border: 1.5px solid #2cb67d;
+    }
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #2cb67d;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      color: #b8b8ff;
+      font-size: 1.1rem;
+    }
+    .stat-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #7f5af0;
+    }
+    .analytics-table th, .analytics-table td {
+      color: #fffffe;
+      vertical-align: middle;
+    }
+    .analytics-table th {
+      background: #1a1a40;
+      color: #7f5af0;
+    }
+    .analytics-table td {
+      background: #232347;
+    }
+    .chart-placeholder {
+      background: #1a1a40;
+      border-radius: 16px;
+      border: 1.5px solid #2cb67d;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b8b8ff;
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px) {
+      .analytics-container { padding: 18px 2vw; }
+      .analytics-title { font-size: 1.5rem; }
+      .analytics-section-title { font-size: 1rem; }
+      .stats-bar { flex-direction: column; gap: 18px; }
+    }

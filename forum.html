@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forum | CodeFutur</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
+      color: #fffffe;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .forum-container {
+      max-width: 900px;
+      margin: 48px auto;
+      background: #232347;
+      border-radius: 24px;
+      box-shadow: 0 4px 32px 0 rgba(127, 90, 240, 0.13);
+      padding: 40px 32px;
+      border: 1.5px solid #2cb67d;
+    }
+    .forum-title {
+      color: #7f5af0;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: left;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+    }
+    .question-form {
+      margin-bottom: 32px;
+      background: #1a1a40;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1.5px solid #2cb67d;
+    }
+    .question-list {
+      margin-bottom: 32px;
+    }
+    .question-card {
+      background: #1a1a40;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      border: 1.5px solid #7f5af0;
+      box-shadow: 0 2px 16px 0 rgba(127, 90, 240, 0.10);
+    }
+    .question-header {
+      font-weight: 700;
+      color: #2cb67d;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .question-meta {
+      color: #b8b8ff;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+    .answer-list {
+      margin-top: 16px;
+      margin-left: 24px;
+    }
+    .answer-card {
+      background: #232347;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-left: 3px solid #2cb67d;
+      color: #b8b8ff;
+      font-size: 0.98rem;
+    }
+    .answer-card.tutor {
+      border-left: 3px solid #7f5af0;
+      background: #1a1a40;
+      color: #2cb67d;
+      font-weight: 700;
+    }
+    .comment-form {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+    }
+    .btn-forum {
+      background: #7f5af0;
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      font-size: 0.98rem;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .btn-forum:hover {
+      background: #2cb67d;
+      color: #232347;
+    }
+    @media (max-width: 900px) {
+      .forum-container { padding: 18px 2vw; }
+      .forum-title { font-size: 1.3rem; }
+      .question-form { padding: 12px; }
+      .question-card { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="forum-container">
+    <div class="forum-title">Forum & Q&A</div>
+    <!-- Form đặt câu hỏi -->
+    <form class="question-form" id="ask-form">
+      <div class="mb-3">
+        <label for="question" class="form-label">Ask a question to tutors or AI assistant:</label>
+        <textarea class="form-control" id="question" rows="2" required placeholder="Type your question here..."></textarea>
+      </div>
+      <button class="btn-forum" type="submit">Submit Question</button>
+    </form>
+    <!-- Danh sách câu hỏi -->
+    <div class="question-list" id="question-list">
+      <!-- Demo câu hỏi -->
+      <div class="question-card">
+        <div class="question-header">How do I center a div in CSS?</div>
+        <div class="question-meta">Asked by <b>StudentA</b> · 2 hours ago</div>
+        <div class="answer-list">
+          <div class="answer-card tutor">Tutor: You can use <code>margin: auto;</code> or flexbox <code>display: flex; justify-content: center;</code>.</div>
+          <div class="answer-card">StudentB: I usually use flexbox for responsive layouts!</div>
+        </div>
+        <form class="comment-form">
+          <input type="text" class="form-control" placeholder="Add a comment..." required>
+          <button class="btn-forum" type="submit">Comment</button>
+        </form>
+      </div>
+      <div class="question-card">
+        <div class="question-header">What is the difference between let and var in JavaScript?</div>
+        <div class="question-meta">Asked by <b>StudentC</b> · 1 hour ago</div>
+        <div class="answer-list">
+          <div class="answer-card tutor">AI Tutor: <code>let</code> is block scoped, <code>var</code> is function scoped. Prefer <code>let</code> for modern JS.</div>
+        </div>
+        <form class="comment-form">
+          <input type="text" class="form-control" placeholder="Add a comment..." required>
+          <button class="btn-forum" type="submit">Comment</button>
+        </form>
+      </div>
+      <!-- Các câu hỏi mới sẽ được thêm ở đây -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Demo thêm câu hỏi mới (chưa có backend)
+    document.getElementById('ask-form').onsubmit = function(e) {
+      e.preventDefault();
+      const val = document.getElementById('question').value.trim();
+      if (!val) return;
+      const html = `
+        <div class="question-card">
+          <div class="question-header">${val}</div>
+          <div class="question-meta">Asked by <b>You</b> · just now</div>
+          <div class="answer-list">
+            <div class="answer-card tutor">AI Tutor: Thank you for your question! A tutor or AI will reply soon.</div>
+          </div>
+          <form class="comment-form">
+            <input type="text" class="form-control" placeholder="Add a comment..." required>
+            <button class="btn-forum" type="submit">Comment</button>
+          </form>
+        </div>
+      `;
+      document.getElementById('question-list').insertAdjacentHTML('afterbegin', html);
+      document.getElementById('question').value = '';
+    };
+    // Demo thêm comment (chỉ frontend)
+    document.getElementById('question-list').addEventListener('submit', function(e) {
+      if (e.target.classList.contains('comment-form')) {
+        e.preventDefault();
+        const input = e.target.querySelector('input');
+        const val = input.value.trim();
+        if (!val) return;
+        const comment = document.createElement('div');
+        comment.className = 'answer-card';
+        comment.textContent = 'You: ' + val;
+        e.target.parentElement.querySelector('.answer-list').appendChild(comment);
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
