@@ -284,3 +284,15 @@ body {
   font-weight: 500;
   letter-spacing: 1px;
 }
+
+@media (max-width: 600px) {
+  .about-section-title {
+    font-size: 1.2rem;
+  }
+  .about-section-text {
+    font-size: 1rem;
+  }
+  .about-values li {
+    font-size: 0.95rem;
+  }
+}

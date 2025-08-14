@@ -1,0 +1,200 @@
+body {
+      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
+      color: #fffffe;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .navbar {
+      border-bottom: 1.5px solid #2cb67d;
+      background: #232347;
+      box-shadow: 0 2px 12px rgba(127,90,240,0.08);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 1.7rem;
+      color: #7f5af0 !important;
+      text-shadow: 0 2px 12px #1a1a40;
+    }
+    .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      font-size: 1.08rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #2cb67d !important;
+    }
+    .learning-header {
+      padding: 56px 0 32px 0;
+      text-align: center;
+    }
+    .learning-header h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #7f5af0;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 16px #1a1a40;
+    }
+    .learning-header p {
+      color: #b8b8ff;
+      font-size: 1.25rem;
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    .dashboard-section {
+      max-width: 1100px;
+      margin: 0 auto 48px auto;
+      background: #232347;
+      border-radius: 32px;
+      box-shadow: 0 8px 48px 0 rgba(127, 90, 240, 0.18);
+      padding: 48px 36px;
+      border: 2px solid #2cb67d;
+    }
+    .dashboard-title {
+      color: #2cb67d;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+      text-align: left;
+    }
+    .courses-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: flex-start;
+      margin-bottom: 40px;
+    }
+    .course-card {
+      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px 0 rgba(127, 90, 240, 0.10);
+      border: 2px solid #7f5af0;
+      padding: 32px 24px;
+      width: 300px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+      position: relative;
+    }
+    .course-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(44,182,125,0.18);
+      border-color: #2cb67d;
+    }
+    .course-title {
+      color: #7f5af0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .course-progress {
+      margin-bottom: 14px;
+    }
+    .progress {
+      height: 10px;
+      background: #1a1a40;
+      border-radius: 6px;
+      margin-bottom: 4px;
+    }
+    .progress-bar {
+      background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
+      border-radius: 6px;
+    }
+    .course-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
+      border: none;
+      font-weight: 700;
+      font-size: 1.08rem;
+      transition: background 0.2s;
+      border-radius: 8px;
+      padding: 8px 0;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(127,90,240,0.10);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
+      color: #232347;
+    }
+    .recommend-section {
+      margin-top: 40px;
+    }
+    .recommend-title {
+      color: #2cb67d;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      text-align: left;
+    }
+    .recommend-list {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .recommend-card {
+      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+      border-radius: 16px;
+      border: 2px solid #2cb67d;
+      padding: 22px 18px;
+      width: 240px;
+      color: #b8b8ff;
+      font-size: 1.08rem;
+      transition: border 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 16px rgba(44,182,125,0.08);
+      font-weight: 600;
+      position: relative;
+    }
+    .recommend-card:hover {
+      border-color: #7f5af0;
+      box-shadow: 0 8px 32px rgba(127, 90, 240, 0.15);
+      color: #2cb67d;
+    }
+    .recommend-card b {
+      color: #7f5af0;
+      font-size: 1.08rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .api-placeholder {
+      margin: 48px 0 0 0;
+      padding: 36px 0;
+      text-align: center;
+      color: #b8b8ff;
+      font-size: 1.15rem;
+      border: 2px dashed #2cb67d;
+      border-radius: 20px;
+      background: #232347;
+      box-shadow: 0 2px 16px rgba(44,182,125,0.08);
+    }
+    .about-footer {
+      text-align:center;
+      margin-top:40px;
+      color:#7f5af0;
+      font-size:1.08rem;
+      font-weight:600;
+      letter-spacing:1px;
+    }
+    @media (max-width: 900px) {
+      .dashboard-section { padding: 18px 2vw; }
+      .courses-list, .recommend-list { flex-direction: column; gap: 18px; }
+      .course-card, .recommend-card { width: 100%; }
+      .learning-header h1 { font-size: 1.7rem; }
+      .dashboard-title, .recommend-title { font-size: 1.1rem; }
+    }

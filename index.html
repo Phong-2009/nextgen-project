@@ -6,7 +6,7 @@
   <title>CodeFutur - Coding Courses</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     :root {
@@ -17,82 +17,184 @@
       --bs-border-color: #2CB67D;
     }
     body {
-      background-color: var(--bs-body-bg);
+      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
       color: var(--bs-body-color);
       font-family: 'Space Grotesk', sans-serif;
-    }
-    .btn-primary {
-      background-color: var(--bs-primary);
-      border-color: var(--bs-primary);
-    }
-    .btn-secondary {
-      background-color: var(--bs-secondary);
-      border-color: var(--bs-secondary);
-      color: #1A1A40;
+      min-height: 100vh;
     }
     .navbar {
-      border-bottom: 1px solid var(--bs-border-color);
+      border-bottom: 1.5px solid var(--bs-border-color);
+      background: #232347;
+      box-shadow: 0 2px 12px rgba(127,90,240,0.08);
     }
     .navbar-brand {
       font-weight: bold;
       letter-spacing: 1px;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+      color: var(--bs-primary) !important;
+      text-shadow: 0 2px 12px #1a1a40;
+    }
+    .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      font-size: 1.08rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--bs-secondary) !important;
     }
     .hero-section {
-      padding: 60px 0 30px 0;
+      padding: 80px 0 40px 0;
       text-align: center;
+      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+      border-radius: 0 0 32px 32px;
+      box-shadow: 0 8px 48px 0 rgba(127, 90, 240, 0.13);
+      margin-bottom: 32px;
     }
     .hero-section h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
+      font-size: 3rem;
+      font-weight: 900;
       margin-bottom: 18px;
       color: var(--bs-primary);
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 16px #1a1a40;
     }
     .hero-section p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: #b8b8ff;
       margin-bottom: 32px;
+      font-weight: 500;
+    }
+    .hero-btns .btn {
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 12px 32px;
+      border-radius: 8px;
+      margin: 0 8px;
+      box-shadow: 0 2px 12px rgba(127,90,240,0.10);
+      transition: background 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
+      border: none;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
+      color: #232347;
+    }
+    .btn-secondary {
+      background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
+      border: none;
+      color: #232347;
+    }
+    .btn-secondary:hover {
+      background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
+      color: #fff;
+    }
+    .hero-icons {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      font-size: 2.5rem;
+      color: var(--bs-secondary);
+      opacity: 0.85;
     }
     .trailer-section {
       display: flex;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
     .trailer-video {
-      border-radius: 16px;
+      border-radius: 18px;
       box-shadow: 0 4px 24px rgba(127, 90, 240, 0.15);
       width: 100%;
       max-width: 700px;
       height: 390px;
       border: 2px solid var(--bs-primary);
     }
-    .courses-title {
+    .features-section {
+      background: #232347;
+      border-radius: 24px;
+      box-shadow: 0 2px 24px rgba(44,182,125,0.08);
+      padding: 36px 0;
+      margin-bottom: 48px;
+    }
+    .features-title {
       color: var(--bs-secondary);
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 24px;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+    }
+    .features-list {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .feature-card {
+      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(127,90,240,0.10);
+      padding: 28px 22px;
+      width: 260px;
+      border: 1.5px solid var(--bs-secondary);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(127, 90, 240, 0.15);
+      border-color: var(--bs-primary);
+    }
+    .feature-card i {
+      font-size: 2.2rem;
+      color: var(--bs-primary);
+      margin-bottom: 12px;
+    }
+    .feature-card h4 {
+      font-weight: 700;
+      color: var(--bs-secondary);
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+    .feature-card p {
+      color: #b8b8ff;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    .courses-title {
+      color: var(--bs-primary);
+      font-weight: 800;
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 1.7rem;
       letter-spacing: 1px;
     }
     .courses {
       display: flex;
-      gap: 24px;
+      gap: 32px;
       flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 32px;
     }
     .course-card {
-      background: #232347;
-      border-radius: 14px;
+      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+      border-radius: 16px;
       box-shadow: 0 4px 16px rgba(44, 182, 125, 0.08);
-      padding: 28px 22px;
+      padding: 32px 24px;
       width: 300px;
-      border: 1.5px solid var(--bs-secondary);
+      border: 2px solid var(--bs-secondary);
       transition: transform 0.2s, box-shadow 0.2s;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      position: relative;
     }
     .course-card:hover {
       transform: translateY(-6px) scale(1.03);
@@ -103,70 +205,148 @@
       font-weight: 700;
       color: var(--bs-primary);
       margin-bottom: 10px;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .course-card p {
       color: #b8b8ff;
       margin-bottom: 18px;
       flex: 1;
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
     .enroll-btn {
       background: var(--bs-secondary);
       color: #1A1A40;
       border: none;
       padding: 10px 0;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.08rem;
       width: 100%;
       transition: background 0.2s;
       letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(44,182,125,0.10);
     }
     .enroll-btn:hover {
       background: var(--bs-primary);
       color: #fff;
     }
+    .course-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--bs-primary);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(127,90,240,0.10);
+      letter-spacing: 0.5px;
+    }
+    .community-section {
+      background: #232347;
+      border-radius: 24px;
+      box-shadow: 0 2px 24px rgba(127,90,240,0.08);
+      padding: 36px 0;
+      margin-bottom: 48px;
+    }
+    .community-title {
+      color: var(--bs-secondary);
+      font-weight: 800;
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+    }
+    .community-links {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .community-link-card {
+      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(127,90,240,0.10);
+      padding: 24px 18px;
+      width: 220px;
+      border: 1.5px solid var(--bs-primary);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .community-link-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(44,182,125,0.15);
+      border-color: var(--bs-secondary);
+      color: var(--bs-secondary);
+      text-decoration: none;
+    }
+    .community-link-card i {
+      font-size: 2rem;
+      color: var(--bs-secondary);
+    }
     footer {
       background: #232347;
       color: #b8b8ff;
       text-align: center;
-      padding: 18px 0 10px 0;
-      font-size: 1rem;
-      margin-top: 40px;
+      padding: 24px 0 14px 0;
+      font-size: 1.08rem;
+      margin-top: 48px;
       border-radius: 18px 18px 0 0;
-      border-top: 1.5px solid var(--bs-border-color);
+      border-top: 2px solid var(--bs-border-color);
+      box-shadow: 0 -2px 12px rgba(44,182,125,0.08);
+      letter-spacing: 1px;
     }
-    @media (max-width: 768px) {
-      .courses { flex-direction: column; align-items: center; }
+    @media (max-width: 900px) {
+      .courses, .features-list, .community-links { flex-direction: column; align-items: center; gap: 18px; }
       .trailer-video { height: 220px; }
+      .blog-container, .features-section, .community-section { padding: 18px 2vw; }
+      .hero-section { padding: 40px 0 24px 0; }
     }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <nav class="navbar navbar-expand-lg bg-transparent px-4 py-3">
-    <a class="navbar-brand text-white" href="#">CodeFutur</a>
+  <nav class="navbar navbar-expand-lg px-4 py-3">
+    <a class="navbar-brand" href="#">CodeFutur</a>
     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav gap-3">
         <li class="nav-item">
-          <a class="nav-link text-white" href="index.html">Home</a>
+          <a class="nav-link active" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="subscription.html">Subscription</a>
+          <a class="nav-link" href="subscription.html">Subscription</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="about.html">About</a>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="courses.html">Courses</a>
+          <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="register.html">Sign Up</a>
+          <a class="nav-link" href="courses.html">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="forum.html">Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.html">Sign Up</a>
         </li>
       </ul>
     </div>
@@ -176,9 +356,16 @@
   <section class="hero-section">
     <h1>Welcome to CodeFutur 🚀</h1>
     <p>The modern coding platform. Learn to code from beginner to advanced, build real projects, and enjoy a futuristic interface.</p>
-    <div class="d-flex justify-content-center gap-3 mb-4">
-      <a href="#" class="btn btn-primary btn-lg">Start Learning</a>
-      <a href="#" class="btn btn-secondary btn-lg">View Courses</a>
+    <div class="hero-btns d-flex justify-content-center gap-3 mb-4">
+      <a href="register.html" class="btn btn-primary btn-lg"><i class="fas fa-user-plus"></i> Get Started</a>
+      <a href="courses.html" class="btn btn-secondary btn-lg"><i class="fas fa-book"></i> View Courses</a>
+    </div>
+    <div class="hero-icons">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-python"></i>
+      <i class="fab fa-java"></i>
+      <i class="fas fa-robot"></i>
+      <i class="fas fa-database"></i>
     </div>
   </section>
 
@@ -193,37 +380,99 @@
     </iframe>
   </section>
 
+  <!-- Features -->
+  <section class="features-section container">
+    <div class="features-title">Why Choose CodeFutur?</div>
+    <div class="features-list">
+      <div class="feature-card">
+        <i class="fas fa-laptop-code"></i>
+        <h4>Project-Based Learning</h4>
+        <p>Build real-world projects as you learn, not just theory.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-users"></i>
+        <h4>Community Support</h4>
+        <p>Join a vibrant community, ask questions, and get help from peers and tutors.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-brain"></i>
+        <h4>AI-Powered Tutor</h4>
+        <p>Get instant answers and guidance from our AI assistant.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>Progress Tracking</h4>
+        <p>Track your learning journey and achievements with smart analytics.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h4>Responsive Design</h4>
+        <p>Learn anywhere, on any device, with a beautiful modern interface.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Courses -->
   <div class="container">
     <div class="courses-title">Featured Coding Courses</div>
     <div class="courses">
       <div class="course-card">
+        <span class="course-badge">Beginner</span>
         <h3><i class="fab fa-html5"></i> Web Basics</h3>
         <p>HTML, CSS, JavaScript for beginners. Build your first website from scratch.</p>
-        <button class="enroll-btn">Enroll</button>
+        <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
       </div>
       <div class="course-card">
+        <span class="course-badge">Popular</span>
         <h3><i class="fab fa-python"></i> Python Fundamentals</h3>
         <p>Get started with Python, solve real-world problems, and prepare for AI/Data Science.</p>
-        <button class="enroll-btn">Enroll</button>
+        <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
       </div>
       <div class="course-card">
+        <span class="course-badge">OOP</span>
         <h3><i class="fab fa-java"></i> Java Essentials</h3>
         <p>Learn OOP, build Java applications, and practice with mini-projects.</p>
-        <button class="enroll-btn">Enroll</button>
+        <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
       </div>
       <div class="course-card">
+        <span class="course-badge">AI</span>
         <h3><i class="fas fa-robot"></i> Intro to AI Programming</h3>
         <p>Introduction to Artificial Intelligence, machine learning basics, hands-on with Python.</p>
-        <button class="enroll-btn">Enroll</button>
+        <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
       </div>
     </div>
   </div>
 
+  <!-- Community -->
+  <section class="community-section container">
+    <div class="community-title">Join the CodeFutur Community</div>
+    <div class="community-links">
+      <a href="forum.html" class="community-link-card">
+        <i class="fas fa-comments"></i>
+        Forum & Q&A
+      </a>
+      <a href="blog.html" class="community-link-card">
+        <i class="fas fa-blog"></i>
+        Community Blog
+      </a>
+      <a href="admin.html" class="community-link-card">
+        <i class="fas fa-user-shield"></i>
+        Creator Dashboard
+      </a>
+      <a href="subscription.html" class="community-link-card">
+        <i class="fas fa-wallet"></i>
+        Subscription & Payment
+      </a>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
-    &copy; 2025 CodeFutur. Modern Coding Courses for Everyone.
+    &copy; 2025 CodeFutur. Modern Coding Courses for Everyone.<br>
+    <span style="font-size:0.95rem;">Made with <i class="fas fa-heart" style="color:#2cb67d;"></i> by CodeFutur Team</span>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>

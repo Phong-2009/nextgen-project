@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Blog | CodeFutur</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
+      color: #fffffe;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .blog-container {
+      max-width: 1000px;
+      margin: 48px auto;
+      background: #232347;
+      border-radius: 24px;
+      box-shadow: 0 4px 32px 0 rgba(127, 90, 240, 0.13);
+      padding: 40px 32px;
+      border: 1.5px solid #2cb67d;
+    }
+    .blog-title {
+      color: #7f5af0;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: left;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+    }
+    .blog-form {
+      margin-bottom: 32px;
+      background: #1a1a40;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1.5px solid #2cb67d;
+    }
+    .blog-list {
+      margin-bottom: 32px;
+    }
+    .blog-card {
+      background: #1a1a40;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      border: 1.5px solid #7f5af0;
+      box-shadow: 0 2px 16px 0 rgba(127, 90, 240, 0.10);
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .vote-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 48px;
+      margin-right: 12px;
+    }
+    .vote-btn {
+      background: none;
+      border: none;
+      color: #7f5af0;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .vote-btn:hover {
+      color: #2cb67d;
+    }
+    .vote-count {
+      color: #2cb67d;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 4px 0;
+    }
+    .blog-content-section {
+      flex: 1;
+    }
+    .blog-header {
+      font-weight: 700;
+      color: #2cb67d;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .blog-meta {
+      color: #b8b8ff;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+    .blog-content {
+      color: #fffffe;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      white-space: pre-line;
+    }
+    .comment-list {
+      margin-top: 16px;
+      margin-left: 0;
+    }
+    .comment-card {
+      background: #232347;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      border-left: 3px solid #2cb67d;
+      color: #b8b8ff;
+      font-size: 0.98rem;
+    }
+    .comment-form {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+    }
+    .btn-blog {
+      background: #7f5af0;
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      font-size: 0.98rem;
+      padding: 6px 18px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .btn-blog:hover {
+      background: #2cb67d;
+      color: #232347;
+    }
+    @media (max-width: 900px) {
+      .blog-container { padding: 18px 2vw; }
+      .blog-title { font-size: 1.3rem; }
+      .blog-form { padding: 12px; }
+      .blog-card { padding: 12px; flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="blog-container">
+    <div class="blog-title">Community Blog & Discussion</div>
+    <!-- Form viết blog -->
+    <form class="blog-form" id="blog-form">
+      <div class="mb-3">
+        <label for="blog-title-input" class="form-label">Title</label>
+        <input type="text" class="form-control" id="blog-title-input" required placeholder="Blog title...">
+      </div>
+      <div class="mb-3">
+        <label for="blog-content-input" class="form-label">Content</label>
+        <textarea class="form-control" id="blog-content-input" rows="5" required placeholder="Write your blog here..."></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="blog-author-input" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="blog-author-input" required placeholder="Your display name...">
+      </div>
+      <button class="btn-blog" type="submit">Post Blog</button>
+    </form>
+    <!-- Danh sách blog -->
+    <div class="blog-list" id="blog-list">
+      <!-- Demo blog -->
+      <div class="blog-card" data-votes="5">
+        <div class="vote-section">
+          <button class="vote-btn upvote" title="Upvote">&#9650;</button>
+          <div class="vote-count">5</div>
+          <button class="vote-btn downvote" title="Downvote">&#9660;</button>
+        </div>
+        <div class="blog-content-section">
+          <div class="blog-header">How to learn Python effectively?</div>
+          <div class="blog-meta">by <b>StudentA</b> · 2 hours ago</div>
+          <div class="blog-content">
+            Practice every day, build small projects, and join coding communities!
+          </div>
+          <div class="comment-list">
+            <div class="comment-card">StudentB: Great tips, thanks!</div>
+            <div class="comment-card">StudentC: I recommend LeetCode for practice.</div>
+          </div>
+          <form class="comment-form">
+            <input type="text" class="form-control" placeholder="Add a comment..." required>
+            <button class="btn-blog" type="submit">Comment</button>
+          </form>
+        </div>
+      </div>
+      <div class="blog-card" data-votes="3">
+        <div class="vote-section">
+          <button class="vote-btn upvote" title="Upvote">&#9650;</button>
+          <div class="vote-count">3</div>
+          <button class="vote-btn downvote" title="Downvote">&#9660;</button>
+        </div>
+        <div class="blog-content-section">
+          <div class="blog-header">Tips for Responsive Web Design</div>
+          <div class="blog-meta">by <b>StudentB</b> · 1 hour ago</div>
+          <div class="blog-content">
+            Use flexbox, media queries, and always test on multiple devices.
+          </div>
+          <div class="comment-list">
+            <div class="comment-card">StudentA: Flexbox is awesome!</div>
+          </div>
+          <form class="comment-form">
+            <input type="text" class="form-control" placeholder="Add a comment..." required>
+            <button class="btn-blog" type="submit">Comment</button>
+          </form>
+        </div>
+      </div>
+      <!-- Các blog mới sẽ được thêm ở đây -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Thêm blog mới
+    document.getElementById('blog-form').onsubmit = function(e) {
+      e.preventDefault();
+      const title = document.getElementById('blog-title-input').value.trim();
+      const content = document.getElementById('blog-content-input').value.trim();
+      const author = document.getElementById('blog-author-input').value.trim() || "Anonymous";
+      if (!title || !content || !author) return;
+      const html = `
+        <div class="blog-card" data-votes="0">
+          <div class="vote-section">
+            <button class="vote-btn upvote" title="Upvote">&#9650;</button>
+            <div class="vote-count">0</div>
+            <button class="vote-btn downvote" title="Downvote">&#9660;</button>
+          </div>
+          <div class="blog-content-section">
+            <div class="blog-header">${title}</div>
+            <div class="blog-meta">by <b>${author}</b> · just now</div>
+            <div class="blog-content">${content}</div>
+            <div class="comment-list"></div>
+            <form class="comment-form">
+              <input type="text" class="form-control" placeholder="Add a comment..." required>
+              <button class="btn-blog" type="submit">Comment</button>
+            </form>
+          </div>
+        </div>
+      `;
+      document.getElementById('blog-list').insertAdjacentHTML('afterbegin', html);
+      document.getElementById('blog-title-input').value = '';
+      document.getElementById('blog-content-input').value = '';
+      document.getElementById('blog-author-input').value = '';
+    };
+
+    // Upvote/downvote cho blog
+    document.getElementById('blog-list').addEventListener('click', function(e) {
+      if (e.target.classList.contains('upvote') || e.target.classList.contains('downvote')) {
+        const card = e.target.closest('.blog-card');
+        const count = card.querySelector('.vote-count');
+        let votes = parseInt(count.textContent);
+        if (e.target.classList.contains('upvote')) votes++;
+        else votes--;
+        count.textContent = votes;
+      }
+    });
+
+    // Thêm comment mới
+    document.getElementById('blog-list').addEventListener('submit', function(e) {
+      if (e.target.classList.contains('comment-form')) {
+        e.preventDefault();
+        const input = e.target.querySelector('input');
+        const val = input.value.trim();
+        if (!val) return;
+        const comment = document.createElement('div');
+        comment.className = 'comment-card';
+        comment.textContent = 'You: ' + val;
+        e.target.parentElement.querySelector('.comment-list').appendChild(comment);
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
