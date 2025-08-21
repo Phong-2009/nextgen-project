@@ -1,306 +1,410 @@
+/* Khai báo các biến CSS tùy chỉnh */
 :root {
-      --bs-primary: #7F5AF0;
-      --bs-secondary: #2CB67D;
-      --bs-body-bg: #1A1A40;
-      --bs-body-color: #FFFFFE;
-      --bs-border-color: #2CB67D;
-    }
-    body {
-      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
-      color: var(--bs-body-color);
-      font-family: 'Space Grotesk', sans-serif;
-      min-height: 100vh;
-    }
-    .navbar {
-      border-bottom: 1.5px solid var(--bs-border-color);
-      background: #232347;
-      box-shadow: 0 2px 12px rgba(127,90,240,0.08);
-    }
-    .navbar-brand {
-      font-weight: bold;
-      letter-spacing: 1px;
-      font-size: 1.7rem;
-      color: var(--bs-primary) !important;
-      text-shadow: 0 2px 12px #1a1a40;
-    }
-    .nav-link {
-      color: #fff !important;
-      font-weight: 600;
-      font-size: 1.08rem;
-      transition: color 0.2s;
-    }
-    .nav-link:hover, .nav-link.active {
-      color: var(--bs-secondary) !important;
-    }
-    .hero-section {
-      padding: 80px 0 40px 0;
-      text-align: center;
-      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
-      border-radius: 0 0 32px 32px;
-      box-shadow: 0 8px 48px 0 rgba(127, 90, 240, 0.13);
-      margin-bottom: 32px;
-    }
-    .hero-section h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 18px;
-      color: var(--bs-primary);
-      letter-spacing: 2px;
-      text-shadow: 0 2px 16px #1a1a40;
-    }
-    .hero-section p {
-      font-size: 1.25rem;
-      color: #b8b8ff;
-      margin-bottom: 32px;
-      font-weight: 500;
-    }
-    .hero-btns .btn {
-      font-size: 1.15rem;
-      font-weight: 700;
-      padding: 12px 32px;
-      border-radius: 8px;
-      margin: 0 8px;
-      box-shadow: 0 2px 12px rgba(127,90,240,0.10);
-      transition: background 0.2s;
-    }
-    .btn-primary {
-      background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
-      border: none;
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
-      color: #232347;
-    }
-    .btn-secondary {
-      background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
-      border: none;
-      color: #232347;
-    }
-    .btn-secondary:hover {
-      background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
-      color: #fff;
-    }
-    .hero-icons {
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      font-size: 2.5rem;
-      color: var(--bs-secondary);
-      opacity: 0.85;
-    }
-    .trailer-section {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 48px;
-    }
-    .trailer-video {
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(127, 90, 240, 0.15);
-      width: 100%;
-      max-width: 700px;
-      height: 390px;
-      border: 2px solid var(--bs-primary);
-    }
-    .features-section {
-      background: #232347;
-      border-radius: 24px;
-      box-shadow: 0 2px 24px rgba(44,182,125,0.08);
-      padding: 36px 0;
-      margin-bottom: 48px;
-    }
-    .features-title {
-      color: var(--bs-secondary);
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-align: center;
-      font-size: 1.7rem;
-      letter-spacing: 1px;
-    }
-    .features-list {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    .feature-card {
-      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
-      border-radius: 16px;
-      box-shadow: 0 2px 16px rgba(127,90,240,0.10);
-      padding: 28px 22px;
-      width: 260px;
-      border: 1.5px solid var(--bs-secondary);
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .feature-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(127, 90, 240, 0.15);
-      border-color: var(--bs-primary);
-    }
-    .feature-card i {
-      font-size: 2.2rem;
-      color: var(--bs-primary);
-      margin-bottom: 12px;
-    }
-    .feature-card h4 {
-      font-weight: 700;
-      color: var(--bs-secondary);
-      margin-bottom: 10px;
-      font-size: 1.15rem;
-      letter-spacing: 0.5px;
-    }
-    .feature-card p {
-      color: #b8b8ff;
-      font-size: 1rem;
-      margin-bottom: 0;
-    }
-    .courses-title {
-      color: var(--bs-primary);
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-align: center;
-      font-size: 1.7rem;
-      letter-spacing: 1px;
-    }
-    .courses {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 32px;
-    }
-    .course-card {
-      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(44, 182, 125, 0.08);
-      padding: 32px 24px;
-      width: 300px;
-      border: 2px solid var(--bs-secondary);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: relative;
-    }
-    .course-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(127, 90, 240, 0.15);
-      border-color: var(--bs-primary);
-    }
-    .course-card h3 {
-      font-weight: 700;
-      color: var(--bs-primary);
-      margin-bottom: 10px;
-      font-size: 1.25rem;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .course-card p {
-      color: #b8b8ff;
-      margin-bottom: 18px;
-      flex: 1;
-      font-size: 1.05rem;
-    }
-    .enroll-btn {
-      background: var(--bs-secondary);
-      color: #1A1A40;
-      border: none;
-      padding: 10px 0;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1.08rem;
-      width: 100%;
-      transition: background 0.2s;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px rgba(44,182,125,0.10);
-    }
-    .enroll-btn:hover {
-      background: var(--bs-primary);
-      color: #fff;
-    }
-    .course-badge {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: var(--bs-primary);
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(127,90,240,0.10);
-      letter-spacing: 0.5px;
-    }
-    .community-section {
-      background: #232347;
-      border-radius: 24px;
-      box-shadow: 0 2px 24px rgba(127,90,240,0.08);
-      padding: 36px 0;
-      margin-bottom: 48px;
-    }
-    .community-title {
-      color: var(--bs-secondary);
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-align: center;
-      font-size: 1.7rem;
-      letter-spacing: 1px;
-    }
-    .community-links {
-      display: flex;
-      gap: 32px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .community-link-card {
-      background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
-      border-radius: 16px;
-      box-shadow: 0 2px 16px rgba(127,90,240,0.10);
-      padding: 24px 18px;
-      width: 220px;
-      border: 1.5px solid var(--bs-primary);
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      font-weight: 600;
-      font-size: 1.08rem;
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-    .community-link-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(44,182,125,0.15);
-      border-color: var(--bs-secondary);
-      color: var(--bs-secondary);
-      text-decoration: none;
-    }
-    .community-link-card i {
-      font-size: 2rem;
-      color: var(--bs-secondary);
-    }
-    footer {
-      background: #232347;
-      color: #b8b8ff;
-      text-align: center;
-      padding: 24px 0 14px 0;
-      font-size: 1.08rem;
-      margin-top: 48px;
-      border-radius: 18px 18px 0 0;
-      border-top: 2px solid var(--bs-border-color);
-      box-shadow: 0 -2px 12px rgba(44,182,125,0.08);
-      letter-spacing: 1px;
-    }
-    @media (max-width: 900px) {
-      .courses, .features-list, .community-links { flex-direction: column; align-items: center; gap: 18px; }
-      .trailer-video { height: 220px; }
-      .blog-container, .features-section, .community-section { padding: 18px 2vw; }
-      .hero-section { padding: 40px 0 24px 0; }
-    }
+  --bs-primary: #7F5AF0;
+  --bs-secondary: #2CB67D;
+  --bs-body-bg: #1A1A40;
+  --bs-body-color: #FFFFFE;
+  --bs-border-color: #2CB67D;
+}
+
+/* Các quy tắc chung cho body */
+body {
+  background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
+  color: var(--bs-body-color);
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+}
+
+/* Thanh điều hướng (Navbar) */
+.navbar {
+  border-bottom: 1.5px solid var(--bs-border-color);
+  background: #232347;
+  box-shadow: 0 2px 12px rgba(127, 90, 240, 0.08);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.7rem;
+  color: var(--bs-primary) !important;
+  text-shadow: 0 2px 12px #1a1a40;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--bs-secondary) !important;
+}
+
+/* Phần giới thiệu (Hero Section) */
+.hero-section {
+  padding: 80px 0 40px 0;
+  text-align: center;
+  background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 8px 48px 0 rgba(127, 90, 240, 0.13);
+  margin-bottom: 32px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+  color: var(--bs-primary);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px #1a1a40;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  color: #b8b8ff;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.hero-btns .btn {
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 8px;
+  margin: 0 8px;
+  box-shadow: 0 2px 12px rgba(127, 90, 240, 0.10);
+  transition: background 0.2s;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
+  color: #232347;
+}
+
+.btn-secondary {
+  background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
+  border: none;
+  color: #232347;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
+  color: #fff;
+}
+
+.hero-icons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 2.5rem;
+  color: var(--bs-secondary);
+  opacity: 0.85;
+}
+
+/* Phần video trailer */
+.trailer-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.trailer-video {
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(127, 90, 240, 0.15);
+  width: 100%;
+  max-width: 700px;
+  height: 390px;
+  border: 2px solid var(--bs-primary);
+}
+
+/* Phần tính năng (Features) */
+.features-section {
+  background: #232347;
+  border-radius: 24px;
+  box-shadow: 0 2px 24px rgba(44, 182, 125, 0.08);
+  padding: 36px 0;
+  margin-bottom: 48px;
+}
+
+.features-title {
+  color: var(--bs-secondary);
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.features-list {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.feature-card {
+  background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(127, 90, 240, 0.10);
+  padding: 28px 22px;
+  width: 260px;
+  border: 1.5px solid var(--bs-secondary);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(127, 90, 240, 0.15);
+  border-color: var(--bs-primary);
+}
+
+.feature-card i {
+  font-size: 2.2rem;
+  color: var(--bs-primary);
+  margin-bottom: 12px;
+}
+
+.feature-card h4 {
+  font-weight: 700;
+  color: var(--bs-secondary);
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+
+.feature-card p {
+  color: #b8b8ff;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* Phần khóa học (Courses) */
+.courses-title {
+  color: var(--bs-primary);
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.courses {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.course-card {
+  background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(44, 182, 125, 0.08);
+  padding: 32px 24px;
+  width: 300px;
+  border: 2px solid var(--bs-secondary);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.course-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(127, 90, 240, 0.15);
+  border-color: var(--bs-primary);
+}
+
+.course-card h3 {
+  font-weight: 700;
+  color: var(--bs-primary);
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.course-card p {
+  color: #b8b8ff;
+  margin-bottom: 18px;
+  flex: 1;
+  font-size: 1.05rem;
+}
+
+.enroll-btn {
+  background: var(--bs-secondary);
+  color: #1A1A40;
+  border: none;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  width: 100%;
+  transition: background 0.2s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(44, 182, 125, 0.10);
+}
+
+.enroll-btn:hover {
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+.course-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--bs-primary);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(127, 90, 240, 0.10);
+  letter-spacing: 0.5px;
+}
+
+/* Phần cộng đồng (Community) */
+.community-section {
+  background: #232347;
+  border-radius: 24px;
+  box-shadow: 0 2px 24px rgba(127, 90, 240, 0.08);
+  padding: 36px 0;
+  margin-bottom: 48px;
+}
+
+.community-title {
+  color: var(--bs-secondary);
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.community-links {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.community-link-card {
+  background: linear-gradient(120deg, #232347 60%, #1a1a40 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(127, 90, 240, 0.10);
+  padding: 24px 18px;
+  width: 220px;
+  border: 1.5px solid var(--bs-primary);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.community-link-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(44, 182, 125, 0.15);
+  border-color: var(--bs-secondary);
+  color: var(--bs-secondary);
+  text-decoration: none;
+}
+
+.community-link-card i {
+  font-size: 2rem;
+  color: var(--bs-secondary);
+}
+
+/* Phần chân trang (Footer) */
+footer {
+  background: #232347;
+  color: #b8b8ff;
+  text-align: center;
+  padding: 24px 0 14px 0;
+  font-size: 1.08rem;
+  margin-top: 48px;
+  border-radius: 18px 18px 0 0;
+  border-top: 2px solid var(--bs-border-color);
+  box-shadow: 0 -2px 12px rgba(44, 182, 125, 0.08);
+  letter-spacing: 1px;
+}
+
+/* Media Queries cho thiết bị nhỏ hơn 900px */
+@media (max-width: 900px) {
+  .courses,
+  .features-list,
+  .community-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .trailer-video {
+    height: 220px;
+  }
+
+  .blog-container,
+  .features-section,
+  .community-section {
+    padding: 18px 2vw;
+  }
+
+  .hero-section {
+    padding: 40px 0 24px 0;
+  }
+}
+
+.carousel {
+  position: relative; /* Đảm bảo các nút con được định vị tương đối so với carousel */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%; /* Đặt vị trí theo chiều dọc ở giữa */
+  transform: translateY(-50%); /* Dịch chuyển ngược lên 50% chiều cao của nút để căn giữa chính xác */
+  z-index: 10; /* Đảm bảo nút nằm trên các slide hoặc card */
+}
+
+.carousel-control-prev {
+  left: 10px; /* Di chuyển nút sang rìa bên trái */
+}
+
+.carousel-control-next {
+  right: 10px; /* Di chuyển nút sang rìa bên phải */
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  /* Tùy chỉnh chung cho cả hai nút */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Tạo nút hình tròn */
+  background-color: rgba(0, 0, 0, 0.5); /* Nền màu đen mờ */
+  color: white; /* Màu chữ hoặc biểu tượng */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+

@@ -48,9 +48,9 @@ const handleRegister = async (event) => {
       lastName,
       email,
       money: 0, // default balance
-      createdAt: new Date().toISOString() // Store the date in ISO format
+      createdAt: new Date().toISOString(), // Store the date in ISO format
+      role: "user"
     };
-
     // Save user data in Firestore using their UID
     await setDoc(doc(db, "users", user.uid), userData);
     console.log("User data:", userData);
