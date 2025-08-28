@@ -1,0 +1,290 @@
+    body {
+      background: linear-gradient(120deg, #232347 0%, #1a1a40 100%);
+      color: #fffffe;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    .main-container {
+      max-width: 1100px;
+      margin: 48px auto;
+      background: #232347;
+      border-radius: 28px;
+      box-shadow: 0 8px 48px 0 rgba(127, 90, 240, 0.13);
+      padding: 0;
+      display: flex;
+      min-height: 600px;
+      border: 2px solid #2cb67d;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      background: #1a1a40;
+      width: 260px;
+      padding: 36px 0 0 0;
+      border-right: 2px solid #2cb67d;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 600px;
+    }
+
+    .sidebar .sidebar-title {
+      color: #7f5af0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+
+    .sidebar-menu {
+      list-style: none;
+      padding: 0 0 0 0;
+      margin: 0;
+    }
+
+    .sidebar-menu li {
+      margin-bottom: 8px;
+    }
+
+    .sidebar-menu .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 32px;
+      color: #b8b8ff;
+      font-size: 1.08rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      border-radius: 0 20px 20px 0;
+    }
+
+    .sidebar-menu .sidebar-link.active,
+    .sidebar-menu .sidebar-link:hover {
+      background: #232347;
+      color: #2cb67d;
+      border-left: 4px solid #2cb67d;
+      text-decoration: none;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      padding: 24px 0 24px 0;
+      text-align: center;
+    }
+
+    .sidebar-bottom .btn-logout {
+      background: #7f5af0;
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: 8px;
+      padding: 8px 24px;
+      transition: background 0.2s;
+    }
+
+    .sidebar-bottom .btn-logout:hover {
+      background: #2cb67d;
+      color: #232347;
+    }
+
+    .content-area {
+      flex: 1;
+      padding: 44px 48px;
+      min-width: 0;
+    }
+
+    .recharge-title {
+      color: #7f5af0;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+
+    .recharge-desc {
+      color: #b8b8ff;
+      margin-bottom: 28px;
+      font-size: 1.08rem;
+    }
+
+    .balance-box {
+      background: #1a1a40;
+      border: 2px solid #2cb67d;
+      border-radius: 12px;
+      padding: 18px 0;
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #2cb67d;
+      box-shadow: 0 2px 16px rgba(44, 182, 125, 0.08);
+    }
+
+    .form-label {
+      color: #b8b8ff;
+      font-size: 0.97rem;
+      font-weight: 600;
+    }
+
+    .form-control {
+      background: #1a1a40;
+      color: #fffffe;
+      border: 1.5px solid #2cb67d;
+      border-radius: 7px;
+      font-size: 1.08rem;
+    }
+
+    .form-control:focus {
+      border-color: #7f5af0;
+      box-shadow: 0 0 0 0.15rem rgba(127, 90, 240, .15);
+      background: #232347;
+      color: #fff;
+    }
+
+    .payment-methods {
+      margin-bottom: 18px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .payment-method-card {
+      background: #1a1a40;
+      border: 2px solid #7f5af0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: border 0.2s, color 0.2s;
+      font-weight: 600;
+      color: #b8b8ff;
+      font-size: 1.05rem;
+      min-width: 110px;
+      justify-content: center;
+    }
+
+    .payment-method-card.selected,
+    .payment-method-card:hover {
+      border-color: #2cb67d;
+      color: #2cb67d;
+    }
+
+    .payment-method-card input[type="radio"] {
+      display: none;
+    }
+
+    .btn-recharge {
+      background: linear-gradient(90deg, #7f5af0 60%, #2cb67d 100%);
+      border: none;
+      font-weight: 700;
+      font-size: 1.08rem;
+      transition: background 0.2s;
+      letter-spacing: 0.5px;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 0;
+      width: 100%;
+      margin-top: 8px;
+      box-shadow: 0 2px 12px rgba(127, 90, 240, 0.13);
+    }
+
+    .btn-recharge:hover {
+      background: linear-gradient(90deg, #2cb67d 60%, #7f5af0 100%);
+      color: #232347;
+    }
+
+    .success-message {
+      color: #2cb67d;
+      text-align: center;
+      margin-top: 18px;
+      font-weight: 700;
+      display: none;
+    }
+
+    .history-section {
+      margin-top: 40px;
+    }
+
+    .history-title {
+      color: #7f5af0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .table-dark {
+      --bs-table-bg: #1a1a40;
+      --bs-table-border-color: #2cb67d;
+      --bs-table-color: #fff;
+    }
+
+    .table th,
+    .table td {
+      vertical-align: middle;
+      font-size: 1.01rem;
+    }
+
+    .table th {
+      color: #2cb67d;
+      font-weight: 700;
+      background: #232347;
+    }
+
+    .table td {
+      background: #1a1a40;
+    }
+
+    .status-success {
+      color: #2cb67d;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #2cb67d;
+        min-height: unset;
+        padding: 18px 0 0 0;
+      }
+
+      .content-area {
+        padding: 24px 8vw;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-container {
+        border-radius: 0;
+      }
+
+      .content-area {
+        padding: 16px 2vw;
+      }
+
+      .sidebar-title {
+        font-size: 1rem;
+      }
+
+      .recharge-title {
+        font-size: 1.2rem;
+      }
+
+      .payment-methods {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }

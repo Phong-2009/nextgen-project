@@ -1,8 +1,8 @@
 import { auth } from "./firebase-config.js";
-import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 const db = getFirestore();
 
-const balanceForm = document.getElementById("balance-form");
+const rechargeForm = document.getElementById("recharge-form");
 
 const handlePurchase = async (e) => {
   e.preventDefault();
@@ -18,6 +18,12 @@ const handlePurchase = async (e) => {
         if (isNaN(updateBalance)) {
           alert("Please enter a valid number to update the balance.");
           return;
+        } 
+        const email = document.getElementById("email").value;
+        const emailSnapshot = await getDoc(email);
+        if (!emailSnapshot.exists()) {
+          alert("Email does not exist.");
+          return;
         }
         const newBalance = currentBalance + updateBalance;
         await updateDoc(balance, { balance: newBalance });
@@ -27,7 +33,7 @@ const handlePurchase = async (e) => {
         // Cập nhật số dư hiển thị ngay lập tức
         const balanceNumber = document.querySelector(".balance-number");
         if (balanceNumber) {
-          balanceNumber.textContent = newBalance.toString() + "$";
+          balanceNumber.textContent = newBalance.toString() + "đ";
         }
         document.getElementById("update-balance").value = ""; // Reset ô nhập tiền
         const updateBalanceOutput = document.getElementById("update-balance-output");
@@ -41,4 +47,4 @@ const handlePurchase = async (e) => {
     alert("Error updating balance: " + error.message);
   }
 };
-balanceForm.addEventListener("submit", handlePurchase);
+rechargeForm.addEventListener("submit", handlePurchase);

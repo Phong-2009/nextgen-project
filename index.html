@@ -231,6 +231,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  padding-top: 3.5rem; /* Tăng padding trên để chừa chỗ cho badge */
+  position: relative;
 }
 
 .course-card:hover {
@@ -242,7 +244,7 @@ body {
 .course-card h3 {
   font-weight: 700;
   color: var(--bs-primary);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 1.25rem;
   letter-spacing: 0.5px;
   display: flex;
@@ -386,40 +388,73 @@ footer {
   }
 }
 
-.carousel {
-  position: relative; /* Đảm bảo các nút con được định vị tương đối so với carousel */
+.d-flex.justify-content-center.flex-wrap.gap-4 {
+    display: flex;
+    align-items: stretch; /* Đảm bảo các thẻ có chiều cao bằng nhau */
+    flex-wrap: wrap; 
+    gap: 1.5rem; /* Tùy chỉnh khoảng cách */
+}
+
+.course-card {
+    display: flex; /* Biến thẻ thành Flex container */
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    justify-content: flex-start; /* Tùy chọn để căn nội dung lên trên */
+}
+
+.course-card .enroll-btn {
+    margin-top: auto; 
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  position: absolute;
-  top: 50%; /* Đặt vị trí theo chiều dọc ở giữa */
-  transform: translateY(-50%); /* Dịch chuyển ngược lên 50% chiều cao của nút để căn giữa chính xác */
-  z-index: 10; /* Đảm bảo nút nằm trên các slide hoặc card */
+  position: absolute; 
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15; 
+}
+
+.carousel-inner {
+  overflow: hidden; 
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carousel-control-prev {
-  left: 10px; /* Di chuyển nút sang rìa bên trái */
+    left: 10px;
 }
 
 .carousel-control-next {
-  right: 10px; /* Di chuyển nút sang rìa bên phải */
+    right: 10px;
 }
 
-
-.carousel-control-prev,
-.carousel-control-next {
-  /* Tùy chỉnh chung cho cả hai nút */
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* Tạo nút hình tròn */
-  background-color: rgba(0, 0, 0, 0.5); /* Nền màu đen mờ */
-  color: white; /* Màu chữ hoặc biểu tượng */
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .courses-title {
+        font-size: 2rem;
+    }
+    .carousel-inner {
+        padding: 0 20px;
+    }
 }
-
 
 </style>
 </head>
@@ -509,61 +544,72 @@ footer {
         <h4>Progress Tracking</h4>
         <p>Track your learning journey and achievements with smart analytics.</p>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-mobile-alt"></i>
-        <h4>Responsive Design</h4>
-        <p>Learn anywhere, on any device, with a beautiful modern interface.</p>
-      </div>
-    </div>
   </section>
 
   <!-- Courses -->
-  <div class="container">
-    <section class="courses-section container">
-      <div class="courses-title">Featured Coding Courses</div>
-      <div id="coursesCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+  <div class="container py-5">
+    <section class="courses-section text-center">
+        <h2 class="courses-title mb-5">Featured Coding Courses</h2>
+        <div id="coursesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
 
-          <div class="carousel-item active">
-            <div class="d-flex justify-content-center gap-4 flex-wrap">
-              <div class="course-card">
-                <span class="course-badge">Beginner</span>
-                <h3><i class="fab fa-html5"></i> Web Basics</h3>
-                <p>HTML, CSS, JavaScript for beginners. Build your first website from scratch.</p>
-                <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
-              </div>
-              <div class="course-card">
-                <span class="course-badge">Popular</span>
-                <h3><i class="fab fa-python"></i> Python Fundamentals</h3>
-                <p>Get started with Python, solve real-world problems, and prepare for AI/Data Science.</p>
-                <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
-              </div>
-              <div class="course-card">
-                <span class="course-badge">OOP</span>
-                <h3><i class="fab fa-java"></i> Java Essentials</h3>
-                <p>Learn OOP, build Java applications, and practice with mini-projects.</p>
-                <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
-              </div>
-              <div class="course-card">
-                <span class="course-badge">AI</span>
-                <h3><i class="fas fa-robot"></i> Intro to AI Programming</h3>
-                <p>Introduction to Artificial Intelligence, machine learning basics, hands-on with Python.</p>
-                <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
-              </div>
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center flex-wrap gap-4">
+                        <div class="course-card">
+                            <span class="course-badge">Beginner</span>
+                            <h3><i class="fab fa-html5"></i> Web Basics</h3>
+                            <p>HTML, CSS, JavaScript for beginners. Build your first website from scratch.</p>
+                            <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
+                        </div>
+                        <div class="course-card">
+                            <span class="course-badge">Popular</span>
+                            <h3><i class="fab fa-python"></i> Python Fundamentals</h3>
+                            <p>Get started with Python, solve real-world problems, and prepare for AI/Data Science.</p>
+                            <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
+                        </div>
+                        <div class="course-card">
+                            <span class="course-badge">OOP</span>
+                            <h3><i class="fab fa-java"></i> Java Essentials</h3>
+                            <p>Learn OOP, build Java applications, and practice with mini-projects.</p>
+                            <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center flex-wrap gap-4">
+                        <div class="course-card">
+                            <span class="course-badge">OOP</span>
+                            <h3><i class="fab fa-java"></i> Java Essentials</h3>
+                            <p>Learn OOP, build Java applications, and practice with mini-projects.</p>
+                            <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
+                        </div>
+                        <div class="course-card">
+                            <span class="course-badge">AI</span>
+                            <h3><i class="fas fa-robot"></i> Intro to AI Programming</h3>
+                            <p>Introduction to Artificial Intelligence, machine learning basics, hands-on with Python.</p>
+                            <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
+                        </div>
+                        <div class="course-card">
+                            <span class="course-badge">AI</span>
+                            <h3><i class="fas fa-robot"></i> Intro to AI Programming</h3>
+                            <p>Introduction to Artificial Intelligence, machine learning basics, hands-on with Python.</p>
+                            <button class="enroll-btn"><i class="fas fa-arrow-right"></i> Enroll</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#coursesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#coursesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#coursesCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#coursesCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
     </section>
-  </div>
   </div>
   <!-- Community -->
   <section class="community-section container">
