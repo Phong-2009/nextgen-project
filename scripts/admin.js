@@ -1,5 +1,7 @@
+import { auth} from "./firebase-config.js";
+
 // Lấy link API
-const API_URL = 'https://689dcab6ce755fe6978a02ea.mockapi.io/api/v1/KhoaHoc';
+const API_URL = 'https://689dcab8ce755fe6978a02f6.mockapi.io/api/v1/KhoaHoc';
 
 // Lấy các phần tử HTML 
 const khTableBody = document.getElementById('productsTableBody');
@@ -102,3 +104,13 @@ const deleteKH = async (id) => {
 
 // Gọi hàm fetch
 document.addEventListener('DOMContentLoaded', fetchKH);
+
+// Logout admin
+const logOutBtn = document.getElementById('logout-btn');
+logOutBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if (confirm("Are you sure you want to logout?")) {
+        await auth.signOut();
+        window.location.href = './login.html';
+    }
+});

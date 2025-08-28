@@ -47,6 +47,7 @@ const handleRegister = async (event) => {
       firstName,
       lastName,
       email,
+      balance: 0,
       money: 0, // default balance
       createdAt: new Date().toISOString(), // Store the date in ISO format
       role: "user"
